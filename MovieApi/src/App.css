@@ -326,6 +326,7 @@ header .nav-links li:last-child {
 
 .movie-card:hover .inner-card-controls {
   opacity: 1;
+  /* opacity: 2; */
 }
 
 
