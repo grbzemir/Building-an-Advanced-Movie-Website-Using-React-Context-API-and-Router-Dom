@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-// import ResultCart from "./ResultCart";
-import { process } from "react-scripts";
+import ResultCart from "./ResultCart";
 
 const Add = () => {
     const [query, setQuery] = useState("");
@@ -9,7 +8,7 @@ const Add = () => {
     function onChange(e) {
         setQuery(e.target.value);
 
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`)
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=b4eaeb31c16ae3a7865fab6842bade54&language=en-US&page=1&include_adult=false&query=${e.target.value}`)
             .then((res) => res.json())
             .then((data) => {
                 if (!data.errors) {
@@ -44,7 +43,7 @@ const Add = () => {
                         <ul className="results">
                             {results.map((movie) => (
                                 <li key={movie.id}>
-                                    {/* <ResultCart movie={movie} /> */}
+                                    <ResultCart movie={movie} />
                                 </li>
                             ))}
                         </ul>
