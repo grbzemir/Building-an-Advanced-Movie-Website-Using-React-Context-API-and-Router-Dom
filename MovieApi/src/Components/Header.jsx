@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -9,6 +9,7 @@ const Header = () => {
                     <div className="brand">
                         <Link to={"/"}>İzlenecekler</Link>
                     </div>
+
                     <ul className="nav-links">
                         <li>
                             <Link to={"/watched"}>İzlenenler</Link>
@@ -22,7 +23,6 @@ const Header = () => {
                 </div>
             </div>
         </header>
-
     );
 };
 

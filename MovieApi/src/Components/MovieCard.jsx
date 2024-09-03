@@ -1,8 +1,9 @@
-import React from "react";
-import MovieControls from "./MovieControls";
-import PropTypes from "prop-types";
 
-const MovieCard = ({ movie, type = "default" }) => { // Varsayılan değer atandı
+import React from "react";
+import PropTypes from "prop-types";
+import MovieControls from "./MovieControls";
+
+const MovieCard = ({ movie, type }) => {
     return (
         <div className="movie-card">
             <div className="overlay"></div>
@@ -25,7 +26,8 @@ const MovieCard = ({ movie, type = "default" }) => { // Varsayılan değer atand
 
 MovieCard.propTypes = {
     movie: PropTypes.object.isRequired,
-    type: PropTypes.string
+    type: PropTypes.string.isRequired
 };
+
 
 export default MovieCard;
