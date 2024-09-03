@@ -21,7 +21,8 @@ const ResultCart = ({ movie }) => {
                         alt={`${movie.poster_path}`}
                     />
                 ) : (
-                    <div className="filler-poster"></div>
+                    <div className="filler-poster">
+                    </div>
                 )}
             </div>
 
