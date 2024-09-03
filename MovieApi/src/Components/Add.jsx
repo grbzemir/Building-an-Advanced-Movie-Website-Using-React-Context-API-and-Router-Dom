@@ -1,23 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import ResultCart from "./ResultCart";
+import debounce from 'lodash.debounce'; // `lodash.debounce`'i içe aktarın
 
 const Add = () => {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
 
-    function onChange(e) {
-        setQuery(e.target.value);
-
-        fetch(`
-    https://api.themoviedb.org/3/search/movie?api_key=b4eaeb31c16ae3a7865fab6842bade54&language=en-US&page=1&include_adult=false&query=${e.target.value}`)
+    const fetchMovies = useCallback(debounce((query) => {
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=b4eaeb31c16ae3a7865fab6842bade54&language=en-US&page=1&include_adult=false&query=${query}`)
             .then((res) => res.json())
             .then((data) => {
-                if (!data.errors) {
+                console.log('Search results:', data);
+                if (data.results) {
                     setResults(data.results);
                 } else {
                     setResults([]);
                 }
+            })
+            .catch((error) => {
+                console.error('Fetch error:', error);
+                setResults([]);
             });
+    }, 500), []); // 500ms gecikme
+
+    function onChange(e) {
+        const value = e.target.value;
+        setQuery(value);
+        if (value.trim() === "") {
+            setResults([]);
+            return;
+        }
+        fetchMovies(value);
     }
 
     return (

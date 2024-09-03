@@ -8,19 +8,22 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import WatchList from './Components/WatchList'
 import Watched from './Components/Watched'
 import Add from './Components/Add'
+import { GlobalProvider } from './context/GlobalState'
 
 function App() {
 
 
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<WatchList />} />
-        <Route path="/watched" element={<Watched />} />
-        <Route path="/add" element={<Add />} />
-      </Routes>
-    </Router>
+    <GlobalProvider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<WatchList />} />
+          <Route path="/watched" element={<Watched />} />
+          <Route path="/add" element={<Add />} />
+        </Routes>
+      </Router>
+    </GlobalProvider>
   )
 }
 
