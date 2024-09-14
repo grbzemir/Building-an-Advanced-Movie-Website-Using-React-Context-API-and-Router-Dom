@@ -41,7 +41,7 @@ const Add = () => {
                     <div className="titles">
                         <h1>Hoş Geldiniz.</h1>
                         <h2>
-                            Milyonlarca film, TV şovu ve keşfedilecek kişi. Şimdi keşfedin.
+                            Milyonlarca film, TV şovu ve keşfedilecek Kişiler. Şimdi keşfedin.
                         </h2>
                     </div>
                     <div className="input-wrapper">
