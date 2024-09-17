@@ -17,6 +17,7 @@ const Header = () => {
                         <li>
                             <Link to={"/add"} className="btn">
                                 <i className="fas fa-plus"></i>
+                                {/* Film Ekle */}
                             </Link>
                         </li>
                     </ul>

@@ -58,6 +58,7 @@ const Add = () => {
                             {results.map((movie) => (
                                 <li key={movie.id}>
                                     <ResultCart movie={movie} />
+                                    {/* <Add /> */}
                                 </li>
                             ))}
                         </ul>
