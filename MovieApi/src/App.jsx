@@ -19,6 +19,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
+          {/* Yollar buraya gelecek */}
           <Route path="/" element={<WatchList />} />
           <Route path="/watched" element={<Watched />} />
           <Route path="/add" element={<Add />} />
