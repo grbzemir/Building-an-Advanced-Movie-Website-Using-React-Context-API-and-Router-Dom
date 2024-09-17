@@ -17,6 +17,7 @@ const MovieCard = ({ movie, type }) => {
                 />
             ) : (
                 <div className="filler-poster"></div>
+                // <MovieCard movie={movie} type={type} />
             )}
 
             <MovieControls movie={movie} type={type} />
